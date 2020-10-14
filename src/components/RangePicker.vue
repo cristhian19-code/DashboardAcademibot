@@ -1,41 +1,39 @@
 <template>
-    <v-col
-      cols="12"
-      sm="6"
-      md="4"
+    <v-menu
+    v-model="menu"
+    :close-on-content-click="false"
+    :nudge-right="40"
+    transition="scale-transition"
+    offset-y
+    min-width="290px"
     >
-      <v-menu
-        v-model="menu2"
-        :close-on-content-click="false"
-        :nudge-right="40"
-        transition="scale-transition"
-        offset-y
-        min-width="290px"
-      >
         <template v-slot:activator="{ on, attrs }">
-          <v-text-field
+            <v-text-field
+            color="secondary"
             v-model="date"
             label="Picker without buttons"
             prepend-icon="mdi-calendar"
             readonly
             v-bind="attrs"
             v-on="on"
-          ></v-text-field>
+            ></v-text-field>
         </template>
         <v-date-picker
-          v-model="date"
-          @input="menu2 = false"
+            color="secondary"
+            v-model="date"
+            range
         ></v-date-picker>
-      </v-menu>
-    </v-col>
+        
+    </v-menu>
 </template>
 
 <script>
 export default {
-
+    data() {
+        return {
+            date: new Date().toISOString().substr(0, 10),
+            menu: false
+        }
+    },
 }
 </script>
-
-<style>
-
-</style>

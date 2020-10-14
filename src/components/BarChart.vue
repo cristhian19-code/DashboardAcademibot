@@ -11,20 +11,17 @@ import axios from 'axios'
 import queries from '@/queries/query'
 
 export default {
-components: {
-  BarChart
-},
+  components: {
+    BarChart
+  },
   data () {
     return {
       datacollection: {},
-      options: {
-        responsive: true,
-      },
       dato: []
     }
   },
   created () {
-    this.Datos
+    this.Datos  
   },
   methods: {
     fillData () {
@@ -36,15 +33,15 @@ components: {
             backgroundColor: '#92EFFE',
             borderColor: '#52BDF4',
             borderWidth: 1
-        },
-        {
+          },
+          {
             label: '# of Error',
             data: this.dato.map(res => res.request.error),
             backgroundColor: '#F7998A',
             borderColor: '#DE614E',
             borderWidth: 1
-        }
-        ]
+          }
+        ],
       }
     },
   },
@@ -105,9 +102,6 @@ components: {
 
 <style>
   .small {
-    width: 45vw;
-    height: 100px;
-    margin: 0;
-    padding: 0;
+    width: 40vw;
   }
 </style>
