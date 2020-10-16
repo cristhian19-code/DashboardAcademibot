@@ -10,7 +10,7 @@
         <template v-slot:activator="{ on, attrs }">
             <v-text-field
             color="secondary"
-            v-model="date"
+            v-model="dateRangeText"
             label="Picker without buttons"
             prepend-icon="mdi-calendar"
             readonly
@@ -21,19 +21,29 @@
         <v-date-picker
             color="secondary"
             v-model="date"
+            @change="obtenerFecha(date)"
             range
         ></v-date-picker>
-        
     </v-menu>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
     data() {
         return {
-            date: new Date().toISOString().substr(0, 10),
+            date: [new Date().toISOString().substr(0, 10), '2020-09-20'],
             menu: false
         }
     },
+    computed: {
+        dateRangeText(){
+           return this.date.join('~')
+        }
+    },
+    methods: {
+        ...mapActions(['obtenerFecha']),
+    },
+
 }
 </script>

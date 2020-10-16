@@ -10,14 +10,12 @@ export default {
         maintainAspectRatio: false,
         scales: {
           xAxes: [{
-            stacked: true,
-            categoryPercentage: 0.5,
-            barPercentage: 1
+              stacked: true
           }],
           yAxes: [{
-            stacked: true
+              stacked: true
           }]
-        }
+      }
       }
     }
   },
