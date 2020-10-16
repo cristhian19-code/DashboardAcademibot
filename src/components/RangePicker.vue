@@ -21,7 +21,7 @@
         <v-date-picker
             color="secondary"
             v-model="date"
-            @change="obtenerFecha(date)"
+            @change="filtrarXDias(date)"
             range
         ></v-date-picker>
     </v-menu>
@@ -42,7 +42,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(['obtenerFecha']),
+        ...mapActions(['filtrarXDias']),
     },
 
 }

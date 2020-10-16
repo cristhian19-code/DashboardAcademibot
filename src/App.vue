@@ -16,16 +16,23 @@
     <v-main>
       <router-view></router-view>
     </v-main>
-  </v-app>
+    <Loader :activated="activated"/>
+</v-app>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+import Loader from '@/components/Loader'
 
 export default {
   name: 'App',
-
+  components:{
+    Loader
+  },
   data: () => ({
-    //
   }),
+  computed: {
+    ...mapState(['activated'])
+  },
 };
 </script>
