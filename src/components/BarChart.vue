@@ -58,6 +58,6 @@ export default {
 
 <style>
   .small {
-    width: 40vw;
+    width: 60vw;
   }
 </style>

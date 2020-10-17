@@ -32,7 +32,7 @@ import { mapActions } from 'vuex'
 export default {
     data() {
         return {
-            date: [new Date().toISOString().substr(0, 10), '2020-09-20'],
+            date: [new Date().toISOString().substr(0, 10)],
             menu: false
         }
     },
