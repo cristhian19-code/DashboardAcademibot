@@ -17,6 +17,7 @@
     <v-layout justify-center row wrap>
       <BarChart/>
     </v-layout>
+    <Loader :activated="activated"/>
   </v-container>
 </template>
 
@@ -24,13 +25,15 @@
 // @ is an alias to /src
 import BarChart from '@/components/BarChart.vue'
 import RangePicker from '@/components/RangePicker.vue'
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
+import Loader from '@/components/Loader'
 
 export default {
   name: 'Home',
   components: {
     BarChart,
-    RangePicker
+    RangePicker,
+    Loader
   },
   data() {
     return {
@@ -40,6 +43,9 @@ export default {
   },
   methods: {
     ...mapActions(['filtrarXMes'])
+  },
+  computed: {
+    ...mapState(['activated'])
   },
 }
 </script>
